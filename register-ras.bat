@@ -1,5 +1,7 @@
 @echo off
 rem %1 - полный номер версии 1С:Предприятия (for example 8.3.20.1914)
+rem %2 - имя Администратора
+rem %3 - пароль Администратора
 set SrvUserName=.\%2
 set SrvUserPwd=%3
 set CtrlPort=1540
