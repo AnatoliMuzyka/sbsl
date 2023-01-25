@@ -1,0 +1,29 @@
+{
+  "event_id" : "bdbfb699-5038-413d-9598-dc609b3fb324",
+  "timestamp" : "2023-01-25T08:32:04.088",
+  "transaction" : "arch1C.exitUsers.blockUsers",
+  "platform" : "other",
+  "logger" : "name loger",
+  "dist" : "base name",
+  "lever" : "error",
+  "environment" : "8.3.20.1914",
+  "message" : "message",
+  "tags" : {
+    "ios_version" : "4.0",
+    "context" : "production"
+  },
+  "exeption" : {
+    "values" : [
+      {
+        "type" : "ошибка блокировки базы",
+        "value" : "невозможно заблокировать базу",
+        "module" : "arch 1c"
+      },
+      {
+        "type" : "ошибка архивации базы",
+        "value" : "невозможно заблокировать базу",
+        "module" : "arch 1c"
+      }
+    ]
+  }
+}

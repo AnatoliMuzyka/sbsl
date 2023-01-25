@@ -1,25 +1,19 @@
-метод Скрипт()
-    //пер МойКлиент = КлиентHttp.СБазовымUrl("http://mail.ru")
-    //знч sentryDSN = "https://8d7f2e021e38417586ddfb62a8f18221@o4504435620904960.ingest.sentry.io/4504480811712512"
-    знч URLSentry = "https://8d7f2e021e38417586ddfb62a8f18221@o4504435620904960.ingest.sentry.io"
-    знч path = "/api/4504480811712512/store" ///api/4504480811712512/store/
+метод Скрипт(URLSentry: Строка, path: Строка)
+    //знч URLSentry = "https://8d7f2e021e38417586ddfb62a8f18221@o4504435620904960.ingest.sentry.io"
+    //знч path = "/api/4504480811712512/store/" ///api/4504480811712512/store/
     знч запросКSentry = КлиентHttp.WithBaseUrl(URLSentry)
     знч запросPost = запросКSentry.PostRequest(path)
-    // запросКSentry.АбсолютныйUrl(URLSentry)
-//    запросPost.УстановитьТипСодержимого("application/json")
-    запросPost.УстановитьТипСодержимого("text/html")
+    запросPost.УстановитьТипСодержимого("application/json")
     знч Заголовки = новый ЗаголовкиHttp({"X-Sentry-Auth": "Sentry sentry_version=7,sentry_key=8d7f2e021e38417586ddfb62a8f18221"
                                         })
     запросPost.SetHeaders(Заголовки)
-    //запросPost.SetBody()
     попытка
-        пер файлТелаЗапроса = новый Файл(".\\test\\bodyPostSentry.json")
-        пер потокЧтение = файлТелаЗапроса.ОткрытьПотокЧтения().ВСтроку()
-        знч потокJSON = новый ЧтениеJson(потокЧтение)
-        //Консоль.Записать(потокJSON.ВСтроку())
+        пер файлТелаЗапроса = новый Файл(".\\logs\\logProcess.json")
+//        пер потокЧтение = файлТелаЗапроса.ОткрытьПотокЧтения().ПрочитатьКакСтроку()
+//        знч потокJSON = новый ЧтениеJson(потокЧтение)
         запросPost.SetBody(файлТелаЗапроса)
         //запросPost.SetBody(файлТелаЗапроса)
-        Консоль.Записать(запросPost.АбсолютныйUrl)
+//        Консоль.Записать(запросPost.АбсолютныйUrl)
         пер Ответ = запросPost.Выполнить()
         знч КодСостояния = Ответ.КодСостояния
         знч тело = Ответ.Body.ReadAsString()
