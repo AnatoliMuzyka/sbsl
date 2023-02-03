@@ -1,28 +1,33 @@
 {
-  "event_id" : "bdbfb699-5038-413d-9598-dc609b3fb324",
-  "timestamp" : "2023-01-25T08:32:04.088",
+  "event_id" : "e4cfa557-a303-4b0d-b30d-181358de5975",
+  "timestamp" : "2023-02-03T06:04:30.142",
   "transaction" : "arch1C.exitUsers.blockUsers",
   "platform" : "other",
   "logger" : "name loger",
-  "dist" : "base name",
-  "lever" : "error",
+  "dist" : "baseName",
+  "level" : "error",
   "environment" : "8.3.20.1914",
-  "message" : "message",
+  "message" : "Архивация 1с Базы",
   "tags" : {
     "ios_version" : "4.0",
     "context" : "production"
   },
-  "exeption" : {
+  "exception" : {
     "values" : [
       {
-        "type" : "ошибка блокировки базы",
-        "value" : "невозможно заблокировать базу",
-        "module" : "arch 1c"
+        "type" : "сеанс завершен успешно",
+        "value" : "сеанс ЗАВЕРШЕН # 1 app - RAS база - ClientEDO user - arch1c время нач/посл. - 03.02.2023 09:04:15/03.02.2023 09:04:15 sleep - False",
+        "module" : "завершениеСеансов"
       },
       {
-        "type" : "ошибка архивации базы",
-        "value" : "невозможно заблокировать базу",
-        "module" : "arch 1c"
+        "type" : "Сообщение",
+        "value" : "ClientEDO - Начата архивация 03.02.2023 09:04:15",
+        "module" : "архивацияБазы"
+      },
+      {
+        "type" : "Сообщение",
+        "value" : "ClientEDO - Конец архивации 03.02.2023 09:04:30 (длилась: 00:00:14)",
+        "module" : "архивацияБазы"
       }
     ]
   }
